@@ -123,19 +123,50 @@ public class Todos {
             case "EXTRA_12":
                 Extra_12();
                 break;
-           /* case "EXTRA_13":
+            case "EXTRA_13":
                 Extra_13();
                 break;
             case "EXTRA_14":
                 Extra_14();
                 break;
-                */
-
+            case "EXTRA_15":
+                Extra_15();
+                break;
+            case "EXTRA_16":
+                Extra_16();
+                break;
+            case "EXTRA_17":
+                Extra_17();
+                break;
+            case "EXTRA_18":
+                Extra_18();
+                break;
+            case "EXTRA_19":
+                Extra_19();
+                break;
+            case "EXTRA_20":
+                Extra_20();
+                break;
+            case "EXTRA_21":
+                Extra_21();
+                break;
+            case "EXTRA_22":
+                Extra_22();
+                break;
+            case "EXTRA_23":
+                Extra_23();
+                break;
+            case "EXTRA_24":
+                Extra_24();
+                break;
         }
 
     }
-         public static void Ejercicio_1() {
-        int n1; int n2; int resultado;
+
+    public static void Ejercicio_1() {
+        int n1;
+        int n2;
+        int resultado;
         Scanner leer = new Scanner(System.in);
         System.out.println("Ingrese el primer número");
         n1 = leer.nextInt();
@@ -976,10 +1007,10 @@ public class Todos {
 
         suma = (suma / cont);
         System.out.println(suma);
-    
+
     }
-    
- public static void Extra_7_2() {
+
+    public static void Extra_7_2() {
         Scanner leer = new Scanner(System.in);
         int menor, mayor, suma, cont, num;
         menor = 100000;
@@ -1097,6 +1128,7 @@ public class Todos {
         } while (resto > 0);
         System.out.println("El nñumero ingresado: " + num + " tiene " + cont + " dígitos");
     }
+
     public static void Extra_12() {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
@@ -1104,7 +1136,7 @@ public class Todos {
                     if (i == 3) {
                         System.out.println("E-" + "-" + j + "-" + k);
                     } else if (j == 3) {
-                        System.out.println( i + "-E" + "-" + k);
+                        System.out.println(i + "-E" + "-" + k);
                     } else if (k == 3) {
                         System.out.println(i + "-" + j + "-E");
                     } else {
@@ -1115,5 +1147,444 @@ public class Todos {
             }
         }
     }
-    
+
+    public static void Extra_13() {
+        // TODO code application logic here
+        Scanner leer = new Scanner(System.in);
+        System.out.println("Ingrese el tamaño de la escalera");
+        int tamaño = leer.nextInt();
+        System.out.println("");
+        for (int i = 1; i <= tamaño ; i ++){
+            for (int j = 1; j <=  i; j ++){
+                System.out.print(j + "");
+            }
+            System.out.println("");
+        }
+        System.out.println("");
+    }
+
+    public static void Extra_14() {
+        Scanner leer = new Scanner(System.in);
+        int media1;
+        media1 = 0;
+        int media;
+        media = 0;
+        int hijos;
+        System.out.println("Ingrese la cantidad de familias que desea analizar");
+        int familias = leer.nextInt();
+        for (int i = 0; i < familias; i++) {
+            media1 = 0;
+            media = 0;
+            hijos = 0;
+            System.out.println("Familia " + (i + 1) + ":");
+            System.out.println("¿Cuántos hijos tiene?");
+            hijos = leer.nextInt();
+            for (int j = 0; j < hijos; j++) {
+                System.out.println("¿Cál es la edad del hijo " + (j + 1) + "?");
+                media = leer.nextInt();
+                media1 = media1 + media;
+            }
+            System.out.println("La media de la familia " + (i + 1) + " es: " + media1 / hijos);
+            System.out.println("");
+        }
+    }
+
+    public static void Extra_15() {
+        Scanner leer = new Scanner(System.in);
+        String opcion;
+        System.out.println("Elija una de las siguientes opciones \n"
+                + "1. Suma \n"
+                + "2. Resta \n"
+                + "3. Multiplicación \n"
+                + "4. División");
+        opcion = leer.nextLine();
+        System.out.println("Ingrese dos valores");
+        int n1 = leer.nextInt();
+        int n2 = leer.nextInt();
+        switch (opcion) {
+            case "1":
+                System.out.println(suma(n1, n2));
+                break;
+            case "2":
+                System.out.println(resta(n1, n2));
+                break;
+            case "3":
+                System.out.println(multiplicacion(n1, n2));
+                break;
+            case "4":
+                System.out.println(division(n2, n1));
+                break;
+        }
+    }
+
+    public static int suma(int n1, int n2) {
+        int suma = n1 + n2;
+        return suma;
+    }
+
+    public static int resta(int n1, int n2) {
+        int resta = (n1 - n2);
+        return resta;
+    }
+
+    public static int multiplicacion(int n1, int n2) {
+        int multiplicacion = (n1 * n2);
+        return multiplicacion;
+    }
+
+    public static int division(int n1, int n2) {
+        int division = (n1 / n2);
+        return division;
+    }
+
+    public static void Extra_16() {
+        pedir();
+    }
+
+    public static void pedir() {
+        Scanner leer = new Scanner(System.in);
+        System.out.println("¿Cuántas personas desea analizar?");
+        int personas = leer.nextInt();
+        String[] nombre = new String[personas];
+        int[] edad = new int[personas];
+        String opcion;
+        for (int i = 0; i < personas; i++) {
+            System.out.println("Ingrese el nombre de la persona " + (i + 1));
+            nombre[i] = leer.next();
+            System.out.println("Ingrese la edad de " + nombre[i]);
+            edad[i] = leer.nextInt();
+        }
+        for (int i = 0; i < personas; i++) {
+            if (edad[i] > 18) {
+                System.out.println(nombre[i] + " es mayor de edad");
+            } else {
+                System.out.println(nombre[i] + " es menor de edad");
+            }
+            if (i < (personas - 1)) {
+                System.out.println("¿Desea continuar?(si/no)");
+                opcion = leer.next();
+                opcion = opcion.toUpperCase();
+                switch (opcion) {
+                    case "SI":
+                    case "NO":
+                        break;
+                }
+            }
+        }
+    }
+
+    public static void Extra_17() {
+        Scanner leer = new Scanner(System.in);
+        System.out.println("Ingrese un número");
+        int num = leer.nextInt();
+        boolean averiguar = false;
+        analizar(num, averiguar);
+
+    }
+
+    public static void analizar(int num, boolean averiguar) {
+        if ((num / 1 == num) && (num / num == 1) && (0 != num % 2) && (1 != num) || (num == 2)) {
+            averiguar = true;
+        }
+        if (averiguar) {
+            System.out.println("El número ingresado es primo");
+        } else {
+            System.out.println("El número ingresado no es primo");
+        }
+    }
+
+    public static void Extra_18() {
+        Scanner leer = new Scanner(System.in);
+        System.out.println("Ingrese el tamaño del vector");
+        int tamaño = leer.nextInt();
+        int[] vector = new int[tamaño];
+        int suma = 0;
+        for (int i = 0; i < tamaño; i++) {
+            System.out.println("Ingrese un valor para la posición [" + (i + 1) + "]");
+            vector[i] = leer.nextInt();
+            suma = suma + vector[i];
+        }
+        System.out.println("La suma de los números ingresados es: \n"
+                + suma);
+    }
+
+    public static void Extra_19() {
+        Scanner leer = new Scanner(System.in);
+        System.out.println("¿Desea que el programa se ejecute de forma automática? (s/n)");
+        String opcion = leer.next();
+        opcion = opcion.toUpperCase();
+        switch (opcion) {
+            case "S":
+                automatico();
+                break;
+            case "N":
+                manual();
+                break;
+        }
+    }
+
+    public static void automatico() {
+        int[] vector1 = new int[3];
+        int[] vector2 = new int[3];
+        for (int i = 0; i < 3; i++) {
+            vector1[i] = (int) (Math.random() * 100);
+            vector2[i] = (int) (Math.random() * 100);
+        }
+        for (int i = 0; i < 3; i++) {
+            if (vector1[i] != vector2[i]) {
+                System.out.println("Se encontró una diferencia en la posicón [" + i + "]");
+                break;
+            } else if (i == 2) {
+                System.out.println("Los vectores son iguales");
+            }
+
+        }
+    }
+
+    public static void manual() {
+        Scanner leer = new Scanner(System.in);
+        System.out.println("Ingrese el tamaño de los vectores");
+        int tamaño = leer.nextInt();
+        int[] vector1 = new int[tamaño];
+        int[] vector2 = new int[tamaño];
+        for (int i = 0; i < tamaño; i++) {
+            if (i == 0) {
+                System.out.println("VECTOR 1");
+            }
+            System.out.println("Ingrese el valor de la posición " + i);
+            vector1[i] = leer.nextInt();
+        }
+        System.out.println("");
+        for (int i = 0; i < tamaño; i++) {
+            if (i == 0) {
+                System.out.println("VECTOR 2");
+            }
+            System.out.println("Ingrese el valor de la posición " + i);
+            vector2[i] = leer.nextInt();
+        }
+        for (int i = 0; i < tamaño; i++) {
+            if (vector1[i] != vector2[i]) {
+                System.out.println("Se encontró una diferencia en la posicón [" + i + "]");
+                break;
+            } else if (i == (tamaño - 1)) {
+                System.out.println("Los vectores son iguales");
+            }
+
+        }
+    }
+
+    public static void Extra_20() {
+        int[] vector = new int[3];
+        /*
+        Scanner leer = new Scanner(System.in);
+        System.out.println("¿Desea ingresar el tamaño del vector? (s/n)");
+        String opcion = leer.next();
+        opcion = opcion.toUpperCase();
+        int tam = 0;
+        switch (opcion) {
+            case "S":
+                System.out.println("Ingrese el tamaño del vector");
+                tam = leer.nextInt();
+                int []vector = new int [tam];
+                break;
+            case "N":
+                tam = (int) (Math.random()*100);
+                int []vector = new int [tam];         
+        }
+         */
+        rellenarVector(vector);
+        imrimirVector(vector);
+    }
+
+    public static void rellenarVector(int[] vector) {
+        /* public static void rellenarVector(int[] vector, tam) {
+         */
+        for (int i = 0; i < 3; i++) {
+            vector[i] = (int) (Math.random() * 100);
+        }
+        /*for (int i = 0; i < tam; i++) {
+            vector[i] = (int) (Math.random() * 100);
+        }*/
+    }
+
+    public static void imrimirVector(int[] vector) {
+        /*
+         public static void imrimirVector(int[] vector, tam) {
+         */
+        for (int i = 0; i < 3; i++) {
+            System.out.println("[" + vector[i] + "]");
+        }
+        /*for (int i = 0; i < 3; i++) {
+            System.out.println("[" + vector[i] + "]");
+        }
+         */
+    }
+
+    public static void Extra_21() {
+        Scanner leer = new Scanner(System.in);
+        int[] suma = new int[10];
+        int nota1, nota2, nota3, nota4, contA, contD;
+        contA = 0;
+        contD = 0;
+        for (int i = 0; i < 10; i++) {
+            nota1 = 0;
+            nota2 = 0;
+            nota3 = 0;
+            nota4 = 0;
+            System.out.println("ALUMNO: " + (i + 1) + "\n"
+                    + "Ingrese la nota del primer TP");
+            nota1 = leer.nextInt();
+            if ((nota1 >= 1) && (nota1 <= 10)) {
+            } else {
+                do {
+                    System.out.println("El dato ingresado es incorrecto. Ingrese la nota del primer TP");
+                    nota1 = leer.nextInt();
+                } while ((nota1 < 1) || (nota1 > 10));
+            }
+            System.out.println("Ingrese la nota del segundo TP");
+            nota2 = leer.nextInt();
+            if ((nota2 >= 1) && (nota2 <= 10)) {
+            } else {
+                do {
+                    System.out.println("El dato ingresado es incorrecto. Ingrese la nota del segundo TP");
+                    nota1 = leer.nextInt();
+                } while ((nota2 < 1) || (nota2 > 10));
+            }
+            System.out.println("Primer Integrador");
+            nota3 = leer.nextInt();
+            if ((nota3 >= 1) && (nota3 <= 10)) {
+            } else {
+                do {
+                    System.out.println("El dato ingresado es incorrecto. Ingrese la nota del primer Integrador");
+                    nota1 = leer.nextInt();
+                } while ((nota3 < 1) || (nota3 > 10));
+            }
+            System.out.println("Segundo integrador");
+            nota4 = leer.nextInt();
+            if ((nota4 >= 1) && (nota4 <= 10)) {
+            } else {
+                do {
+                    System.out.println("El dato ingresado es incorrecto. Ingrese la nota del segundo Integrador");
+                    nota4 = leer.nextInt();
+                } while ((nota4 < 1) || (nota4 > 10));
+            }
+            suma[i] = (int) ((nota1 * 0.1) + (nota2 * 0.15) + (nota3 * 0.25) + (nota4 * 0.5));
+            if (suma[i] >= 7) {
+                contA = contA + 1;
+            } else {
+                contD = contD + 1;
+            }
+        }
+        if (contA >= 1) {
+            System.out.println("La cantidad de alumnos aprobados es de: " + contA);
+        } else {
+            System.out.println("No hay ningún alumno aprobado");
+        }
+        if (contD >= 1) {
+            System.out.println("La cantidad de alumnos desaprobados es de: " + contD);
+        } else {
+            System.out.println("No hay ningún alumno desaprobado");
+        }
+    }
+        public static void Extra_22() {
+        Scanner leer = new Scanner(System.in);
+        int n;
+        int m;
+        System.out.println("Ingrese el tamaño de la primera dimensión de la matriz");
+        n = leer.nextInt();
+        if (n < 1) {
+            do {
+                System.out.println("El dato ingresado es incorrecto. Ingrese un número mayor a 0");
+                n = leer.nextInt();
+            } while (n < 1);
+        }
+        System.out.println("Ingrese el tamaño de la segunda dimensión de la matriz");
+        m = leer.nextInt();
+        if (m < 1) {
+            System.out.println("El dato ingresado es incorrecto. Ingrese un número mayor a 0");
+            m = leer.nextInt();
+        }
+        int[][] matriz = new int[n][m];
+        System.out.println("La suma de los valores de la matriz [" + n + "][" + m + "] = " + LlenarMatriz(n, m, matriz));
+
+    }
+
+    public static int LlenarMatriz(int n, int m, int matriz[][]) {
+        int suma = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                matriz[i][j] = (int) (Math.random() * 100);
+                suma = suma + matriz[i][j];
+            }
+        }
+        return suma;
+
+    }
+        public static void Extra_23() {
+        Scanner leer = new Scanner(System.in);
+        String[][] sopa = new String[20][20];
+        int largo;
+        String opcion;
+
+        for (int i = 0; i < 20; i++) {
+            if (i < 5) {
+                System.out.println("Ingrese una palabra de entre 3 a 5 caracteres");
+                opcion = leer.nextLine();
+                largo = opcion.length();
+                if ((largo < 3) || (largo > 5)) {
+                    do {
+                        System.out.println("La palabra ingresada es incorrecta. Ingrese otra");
+                        opcion = leer.nextLine();
+                        largo = opcion.length();
+                    } while ((largo < 3) || (largo > 5));
+                }
+                for (int k = 0; k < largo; k++) {
+                        sopa[i][k] = opcion.substring(k, k+1); 
+                }   
+                for (int l = largo; l < 20; l++) {
+                    sopa[i][l] = String.valueOf((int) (Math.random() * 10));
+                }
+            } else {
+                for (int j = 0; j < 20; j++) {
+                    sopa[i][j] = String.valueOf((int) (Math.random() * 10));
+                }
+            }
+        }
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 20; j++) {
+                System.out.print("[" + sopa[i][j] + "] ");
+            }
+            System.out.println("");
+        }
+    }
+            public static void Extra_24() {
+        Scanner leer = new Scanner(System.in);
+        System.out.println("Ingrese un valor límite");
+        int limite = leer.nextInt();
+        int[] vector = new int[limite];
+        int cont = 0;
+        for (int i = 0; i < limite; i++) {
+            if ((i == 0) || (i == 1)) {
+                vector[i] = 1;
+            } else {
+                vector[i] = vector[i - 1] + vector[i - 2];
+            }
+
+            if (vector[i] <= limite) {
+                cont = cont + 1;
+            } else {
+                break;
+            }
+        }
+
+        for (int i = 0; i < cont; i++) {
+            if (i < (cont - 1)) {
+                System.out.print("[" + vector[i] + "],");
+            } else {
+                System.out.print("[" + vector[i] + "]");
+            }
+        }
+        System.out.println("");
+    }
+
 }
